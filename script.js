@@ -63,6 +63,7 @@ function showData(data) {
     readMoreBtn.addEventListener("click", () => {
       slider.classList.add("openSlider");
       document.body.style.overflow = "hidden"; // disable scrolling
+      text.disabled = true; // disable search
       document.querySelector(".sliderName").innerHTML = element.show.name;
       document.querySelector(".sliderSummary").innerHTML = element.show.summary;
       document.querySelector(".sliderLink").href = element.show.url;

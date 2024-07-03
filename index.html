@@ -9,8 +9,8 @@
       .slider {
         position: fixed;
         transition: 0.5s;
-        height: 100vh;
-        bottom: -100vh;
+        height: 93vh;
+        bottom: -93vh;
       }
       .openSlider {
         bottom: 0;
@@ -89,7 +89,7 @@
       <div class="text-center my-5 text-blue-600"
         ><a href="" class="sliderLink" target="_blank"><span class="underline underline-offset-2">TV Maze Link</span> <i class="fa-solid fa-up-right-from-square"></i></a
       ></div>
-      <table class="w-1/2 mx-auto block">
+      <table class="sm:w-1/2 mx-auto block">
         <tr>
           <td class="w-auto font-semibold">Premiered</td>
           <td class="sliderPremiered w-full text-center"></td>
@@ -118,6 +118,7 @@
       closeBtn.addEventListener("click", () => {
         slider.classList.remove("openSlider");
         document.body.style.overflow = "auto"; // enable scrolling
+        text.disabled = false; // enable search
       });
     </script>
   </body></html
