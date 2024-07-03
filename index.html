@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <title>TV shows Search</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .slider {
+        position: fixed;
+        transition: 0.5s;
+        height: 100vh;
+        bottom: -100vh;
+      }
+      .openSlider {
+        bottom: 0;
+      }
+      table,
+      tr,
+      td {
+        border-collapse: collapse;
+        border: 2px solid orangered;
+      }
+      td {
+        padding: 0.5rem;
+      }
+    </style>
+    <!-- loading animation -->
+    <style>
+      .loading {
+        display: none;
+      }
+      .ball {
+        animation: 1s infinite ease motion alternate;
+      }
+      .b1 {
+        animation-delay: 0;
+      }
+      .b2 {
+        animation-delay: 0.2s;
+      }
+      .b3 {
+        animation-delay: 0.4s;
+      }
+      @keyframes motion {
+        0% {
+          transform: translateY(0);
+        }
+        100% {
+          transform: translateY(-30px);
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" /> </head
+  ><body>
+    <!-- START -->
+
+    <h1 class="text-center m-4 text-3xl underline">TV Shows Search</h1>
+
+    <!-- input -->
+    <div class="flex justify-center mt-8">
+      <form action="" class="flex bg-red-200 border-red-300 border rounded-full">
+        <input type="text" placeholder="Search" class="px-4 py-2 rounded-l-full text flex-1" required />
+        <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded-r-full hover:bg-red-600"> <i class="fa-solid fa-magnifying-glass"></i> Go </button>
+      </form>
+    </div>
+
+    <!-- loading -->
+    <div class="loading fixed left-0 right-0 m-auto top-56" style="width: 100px">
+      <div class="ball b1">🟠</div>
+      <div class="ball b2">🔵</div>
+      <div class="ball b3">🟡</div>
+    </div>
+
+    <!-- error -->
+    <div class="errorMsg text-center mt-10 hidden">
+      <span class="text-2xl">404 <span>oops</span></span>
+      <p class="text-center text-stone-400 text-xl">Nothing related to your Search</p>
+    </div>
+
+    <!-- grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 m-5"> </div>
+
+    <!-- slider -->
+    <div class="slider bg-white w-full p-5">
+      <button class="absolute top-2 right-3"><i class="closeBtn fa-solid fa-square-xmark text-2xl text-red-600"></i></button>
+      <div class="sliderName text-center uppercase font-semibold text-2xl mb-5 text-orange-600"></div>
+      <div class="mx-auto"><div class="sliderSummary text-justify text-stone-600"></div></div>
+      <div class="text-center my-5 text-blue-600"
+        ><a href="" class="sliderLink" target="_blank"><span class="underline underline-offset-2">TV Maze Link</span> <i class="fa-solid fa-up-right-from-square"></i></a
+      ></div>
+      <table class="w-1/2 mx-auto block">
+        <tr>
+          <td class="w-auto font-semibold">Premiered</td>
+          <td class="sliderPremiered w-full text-center"></td>
+        </tr>
+        <tr>
+          <td class="font-semibold">Ended</td>
+          <td class="sliderEnded text-center"></td>
+        </tr>
+        <tr>
+          <td class="font-semibold">Type</td>
+          <td class="sliderType text-center"></td>
+        </tr>
+        <tr>
+          <td class="font-semibold">Status</td>
+          <td class="sliderStatus text-center"></td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- END -->
+    <script src="script.js"></script>
+    <script>
+      // closing slider
+      const closeBtn = document.querySelector(".closeBtn");
+      const slider = document.querySelector(".slider");
+      closeBtn.addEventListener("click", () => {
+        slider.classList.remove("openSlider");
+        document.body.style.overflow = "auto"; // enable scrolling
+      });
+    </script>
+  </body></html
+>
