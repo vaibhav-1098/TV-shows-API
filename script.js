@@ -43,18 +43,22 @@ function showData(data) {
     box.classList.add("flex", "gap-5", "rounded-md", "p-2", "border-orange-500", "border-2");
 
     box.innerHTML = `
-      <div class="w-40 h-52 bg-gray-300 rounded-md" style="background-image: url(${element.show.image.medium}); background-size: cover; background-repeat: no-repeat; background-position: center;"></div>
-      <div class="flex flex-col justify-between">
-        <ol>
-          <li class="font-semibold text-xl">${element.show.name}</li>
-          <li class="text-transparent">-</li>
-          <li>${element.show.language}</li>
-          <li><i>Rating:</i> ${element.show.rating.average}</li>
-          <li class="font-serif text-rose-500">${element.show.genres.join(", ")}</li>
-        </ol>
-        <button class="text-white bg-orange-600 p-1 px-2 rounded-md mb-2 w-32">Read More...</button>
-      </div>
-    `;
+    <div class="w-40 h-52 bg-gray-300 rounded-md" style="background-image: url(${element.show.image.medium}); background-size: cover; background-repeat: no-repeat; background-position: center;"></div>
+    <div class="flex flex-col justify-between">
+      <ol>
+        <li class="font-semibold text-xl">${element.show.name}</li>
+        <li class="text-transparent">-</li>
+        <li>${element.show.language}</li>
+        <li>
+          <i>Rating:</i> <span>${element.show.rating.average}</span>
+          <span><span class="text-transparent select-none">__</span><input type="checkbox" class="cursor-pointer scale-150" /></span>
+        </li>
+        <li class="font-serif text-rose-500">${element.show.genres.join(", ")}</li>
+      </ol>
+      <button class="text-white bg-orange-600 p-1 px-2 rounded-md mb-2 w-32">Read More...</button>
+    </div>
+  `;
+  
 
     grid.append(box);
 
@@ -76,4 +80,4 @@ function showData(data) {
 }
 
 // default
-getData("batman");
+// getData("batman");
